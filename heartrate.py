@@ -17,6 +17,7 @@ def heartrate_loader(filename):
     records = []
     with open(filename, 'rb') as csvfile: # Don't overwrite file.
         csvreader = csv.reader(csvfile, delimiter = ',') # Distinguishes between types
+        csvreader.next()
         for row in csvreader:
             if len(row) == 2: # Amount of rows.
                 records.append({
