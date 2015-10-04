@@ -17,16 +17,18 @@ def heartrate_loader(filename):
     records = []
     with open(filename, 'rb') as csvfile: # Don't overwrite file.
         csvreader = csv.reader(csvfile, delimiter = ',') # Distinguishes between types
-        csvreader.next()
+        next(csvreader,'none') # Skips header line
         for row in csvreader:
             if len(row) == 2: # Amount of rows.
                 records.append({
                     "navn": row[0].strip(),
-                    "heartrate_low": int(row[1].strip())
+                    "heartratelow_percentage": float(row[1].strip())
                 })
     return records
 
 # Import fil fra mappe
 heartrate_data = heartrate_loader("Data/heartrate.data")
 
+# For loop to iterate through data from csv-file
+navn = [x['navn'] for x in heartrate_data]
 
