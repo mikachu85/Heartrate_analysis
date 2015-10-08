@@ -1,7 +1,7 @@
-navn, heartratelow_percentage
-Long, 0.74
-Marathon, 0.79
-General_aerobic, 0.70
-Recovery, 0.70
-Lactate_threshold, 0.82
-VO2_max, 0.93
+navn, heartratelow_percentage, heartratehigh_percentage
+Long, 0.74, 0.84
+Marathon, 0.79, 0.88
+General_aerobic, 0.70, 0.81
+Recovery, 0.70, 0.76
+Lactate_threshold, 0.82, 0.91
+VO2_max, 0.93, 0.95
