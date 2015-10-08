@@ -19,20 +19,36 @@ def heartrate_loader(filename):
         csvreader = csv.reader(csvfile, delimiter = ',')
         next(csvreader,'none') # Skips header line
         for row in csvreader:
-            if len(row) == 3:
+            if len(row) == 5:
                 records.append({
                     "navn": row[0].strip(),
                     "heartratelow_percentage": float(row[1].strip()),
-                    "heartratehigh_percentage": float(row[2].strip())
+                    "heartratehigh_percentage": float(row[2].strip()),
+                    "heartreserve_low": float(row[3].strip()),
+                    "heartreserve_high": float(row[4].strip())
                 })
     return records
 
 # csv-data
 heartrate_data = heartrate_loader("Data/heartrate.data")
 
-# For loop to iterate through data from csv-file
+
+# Iterate through attributes in csv-file
 navn = [x['navn'] for x in heartrate_data]
 heartratelow_percentage = [x['heartratelow_percentage'] for x in heartrate_data]
 heartratehigh_percentage = [x['heartratehigh_percentage'] for x in heartrate_data]
+heartreserve_low = [x['heartreserve_low'] for x in heartrate_data]
+heartreserve_high = [x['heartreserve_high'] for x in heartrate_data]
 
-print heartratelow_percentage, heartratehigh_percentage
+# Shortcuts
+hm1 = heartratelow_percentage
+hm2 = heartratehigh_percentage
+hr3 = heartreserve_low
+hr4 = heartreserve_high
+mh = max_heartrate
+
+for i in range (0,6):
+    print (mh*hm1[i]), '\t', (mh*hm2[i])
+
+
+
