@@ -4,14 +4,16 @@ __author__ = 'Damien'
 import matplotlib.pyplot as plt
 import numpy as np
 import math
+
 import csv
+
 
 # Pre-Data (user-input based)
 
 max_heartrate = int(input('What is your max heartrate?')) # Max hjerteslag - hoy intensitet
 resting_heartrate = int(input('What is your heartrate when rested?')) # Hvilepuls - Generell
 heartrate_reserve = max_heartrate - resting_heartrate # Heartrate reserve
-print "your heartrate reserve is: ", heartrate_reserve
+print "Your heartrate reserve is: ", heartrate_reserve
 # csv - file loader
 
 def heartrate_loader(filename):
@@ -50,9 +52,13 @@ mh = max_heartrate
 hrr = heartrate_reserve
 rhr = resting_heartrate
 
+template = "{0:8}|{1:10}|{2:15}|{3:7}"
+#print template.format("[", (mh*hm1[i]), '\t', (mh*hm2[i]), "]", "\t", "[", (hrr*hr3[i]+rhr), '\t', (hrr*hr4[i]+rhr), "]")
 
 for i in range (0,6):
-    print (mh*hm1[i]), '\t', (mh*hm2[i]), "\t", (hrr*hr3[i]+rhr), '\t', (hrr*hr4[i]+rhr)
+    print '%20s  %1s  %8s %8s %1s %1s  %8s %8s %1s' % (navn[i], "[", (mh*hm1[i]), (mh*hm2[i]), "]", "[", (hrr*hr3[i]+rhr), (hrr*hr4[i]+rhr), "]")
+
+
 
 
 
