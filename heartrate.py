@@ -47,8 +47,9 @@ hr3 = heartreserve_low
 hr4 = heartreserve_high
 mh = max_heartrate
 
+
 for i in range (0,6):
-    print (mh*hm1[i]), '\t', (mh*hm2[i])
+    print (mh*hm1[i]), '\t', (mh*hm2[i]), (mh*hr3[i]), '\t', (mh*hr4[i])
 
 
 
