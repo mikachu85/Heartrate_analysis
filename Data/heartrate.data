@@ -1,7 +1,7 @@
 navn, heartratelow_percentage, heartratehigh_percentage, heartreserve_low, heartreserve_high
-Long, 0.74, 0.84, 0.65, 0.78
+Long Run, 0.74, 0.84, 0.65, 0.78
 Marathon, 0.79, 0.88, 0.73, 0.84
-General_aerobic, 0.70, 0.81, 0.62, 0.75
+General Aerobic, 0.70, 0.81, 0.62, 0.75
 Recovery, 0.70, 0.76, 0.65, 0.69
-Lactate_threshold, 0.82, 0.91, 0.77, 0.88
-VO2_max, 0.93, 0.95, 0.91, 0.94
+Lactate Threshold, 0.82, 0.91, 0.77, 0.88
+VO2 max, 0.93, 0.95, 0.91, 0.94

@@ -1,11 +1,7 @@
 from __future__ import division
 __author__ = 'Damien'
 
-
-import math
 import csv
-import numpy as np
-
 
 # csv - file loader
 def heartrate_loader(filename):
@@ -23,8 +19,6 @@ def heartrate_loader(filename):
                     "heartreserve_high": float(row[4].strip())
                 })
     return records
-
-
 
 def tabledraw():
     print '%18s' % "Type", '%12s' % "Heart I", '%14s' % "Heart II"
