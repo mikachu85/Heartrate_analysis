@@ -1,9 +1,10 @@
 from __future__ import division
 __author__ = 'Damien'
 
+import math
 import csv
 import time
-
+import random
 # csv - file loader
 def heartrate_loader(filename):
     records = []
@@ -27,12 +28,23 @@ def tabledraw():
 
 
 def racepredictor():
-    time1k = float(input('\nHow fast can you run 1km? [Type minutes:seconds]'))
+    time1k = raw_input('\nHow fast can you run 1km? [Minutes:Seconds]')
     print '\nThe approximated times for 5k,10k,21k will be:\n'
-    if time1k >= 5 and time1k <= 6:
-        print "5k time: " , time1k*5.3 , "\n\n10k time:" , time1k*10.6 , "\n\n21k time:" , time1k*21.9
-    elif time1k >= 6 and time1k <= 7:
-        print "5k time: " , time1k*5.6 , "\n\n10k time:" , time1k*10.9 , "\n\n21k time:" , time1k*22.5
+
+    calc = time1k.split(':')
+    calc_0 = int(calc[0])
+    calc_1 = int(calc[1])
+
+    time5k_min = math.ceil(calc_0*5.3)
+    print time5k_min
+    time5k_sec = (calc_1 - calc_1) + random.randint(1,59)
+    print "5k time: " , '%00.1s' % time5k_min, ':' , time5k_sec
 
 
-
+# def get_sec(s):
+#     l = s.split(':')
+#     return int(l[0]) * 3600 + int(l[1]) * 60 + int(l[2])
+#
+# print get_sec('1:23:45')
+# print get_sec('0:04:15')
+# print get_sec('0:00:25')
