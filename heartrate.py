@@ -16,8 +16,10 @@ resting_heartrate = 50
 #max_heartrate = int(input('What is your max heartrate?')) # Max hjerteslag - hoy intensitet
 #resting_heartrate = int(input('What is your heartrate when rested?')) # Hvilepuls - Generell
 hrr = max_heartrate - resting_heartrate # Heartrate Reserve
-print "\nYour max, resting and reserve heartrate are: ", max_heartrate, ",", resting_heartrate, ",", hrr
+print "\nYour max, resting and reserve heartrate is: ", max_heartrate, ",", resting_heartrate, ",", hrr
 print "\nYour heartrate for the desired running types are as follows: \n\n"
+
+
 # csv-data
 heartrate_data = methods.heartrate_loader("Data/heartrate.data")
 
@@ -36,6 +38,9 @@ hr4 = heartreserve_high
 mh = max_heartrate
 rhr = resting_heartrate
 
+
+
+
 # Print table
 methods.tabledraw()
 
@@ -44,6 +49,4 @@ for i in range (0,6):
 
 # Race predictor
 methods.racepredictor()
-
-
 
